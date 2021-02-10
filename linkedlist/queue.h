@@ -1,6 +1,6 @@
 /**
  * @file queue.h
- * @brief キューのライブラリのヘッダファイル
+ * @brief 線形リストを用いたキューのヘッダファイル
  */
 #ifndef QUEUE_H
 #define QUEUE_H
@@ -10,8 +10,8 @@
 /** キューを実現する構造体 */
 typedef struct {
     int num;    /**< 現在の要素数 */
-    Node *front;  /**< 先頭要素カーソル */
-    Node *rear;   /**< 末尾要素カーソル */
+    Node *front;  /**< 先頭ノードへのポインタ */
+    Node *rear;   /**< 末尾ノードへのポインタ */
 } Queue;
 
 /**
@@ -30,26 +30,26 @@ int QueueInit(Queue *q);
 void QueueFree(Queue *q);
 
 /**
- * キューにデータを追加する
+ * ノードを追加する
  *
  * @param[out] q キューのポインタ
- * @param[in] x 追加するデータ
+ * @param[in] x 追加ノードへのポインタ
  * @return int 0:追加成功, -1:追加失敗
  */
 int QueueEnque(Queue *q, Node *x);
 
 /**
- * キューからデータを削除する
+ * ノードを削除する
  *
  * @param[out] q キューのポインタ
- * @return Node* 削除したデータ
+ * @return Node 削除したノードへのポインタ
  */
 Node *QueueDeque(Queue *q);
 
 /**
  * キューに蓄えられているデータ数を取得する
  *
- * @param[out] q キューのポインタ
+ * @param[in] q キューのポインタ
  * @return int キューに蓄えられているデータ数
  */
 int QueueNo(const Queue *q);
@@ -62,6 +62,11 @@ int QueueNo(const Queue *q);
  */
 int QueueIsEmpty(const Queue *q);
 
+/**
+ * キューの中身を表示
+ *
+ * @param[out] q キューのポインタ
+ */
 void PrintQueue(Queue *q);
 
 #endif

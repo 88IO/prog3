@@ -1,6 +1,6 @@
 /**
  * @file queue.c
- * @brief キューのライブラリのソースファイル
+ * @brief 線形リストを用いたキューのソースファイル
  */
 #include <stdlib.h>
 #include "queue.h"

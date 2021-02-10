@@ -1,3 +1,7 @@
+/**
+ * @file test_queue.c
+ * @brief 線形リストを用いたキューの動作確認ファイル
+ */
 #include <stdio.h>
 #include "linkedlist.h"
 #include "queue.h"
@@ -9,7 +13,7 @@ int main(void) {
 
     int ch;
     do {
-        Node x;
+        Node *x;
 
         puts("(1) キューに追加    (2) キューから削除");
         puts("(3) キューを表示    (4) キューの要素数");
@@ -18,8 +22,9 @@ int main(void) {
 
         switch (ch) {
             case 1:
-                x = Read("追加");
-                QueueEnque(&q, &x);
+                x = AllocNode();
+                *x = Read("追加");
+                QueueEnque(&q, x);
                 break;
             case 2:
                 QueueDeque(&q);  break;

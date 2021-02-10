@@ -1,3 +1,7 @@
+/**
+ * @file test_linkedlist.c
+ * @brief 線形リストの動作確認ファイル
+ */
 #include "linkedlist.h"
 
 int main(void) {

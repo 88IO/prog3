@@ -1,3 +1,7 @@
+/**
+ * @file linkedlist.c
+ * @brief 線形リストのソースファイル
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
