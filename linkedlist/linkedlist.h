@@ -7,7 +7,7 @@
 
 /** リスト操作のメニュー */
 typedef enum {
-    Term, Insert, Append, Delete, Print, Clear
+    Term, Insert, Append, Delete, InsertN, DeleteN, Print, Clear
 } Menu;
 
 /** リストを構成するノードの構造体 */
@@ -116,7 +116,7 @@ Node Read(char *message);
 /**
  * リスト操作のメニュー選択
  *
- * @return Menu Term:終了 Insert:先頭追加 Append:末尾追加 Delete:先頭削除 Print:表示 Clear:全削除
+ * @return Menu Term:終了 Insert:先頭追加 Append:末尾追加 Delete:先頭削除 InsertN:N番目追加 DeleteN:N番目削除 Print:表示 Clear:全削除
  */
 Menu SelectMenu(void);
 
