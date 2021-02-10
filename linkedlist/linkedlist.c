@@ -26,11 +26,11 @@ void InsertNode(Node **top, int no, char *name) {
 void InserNodeNth(Node **top, int n, int no, char *name) {
     Node *ptrh = *top;
     int i;
-    for (i = 1; i < n; i++)
+    for (i = 1; i < n - 1; i++)
         ptrh = ptrh->next;
     Node *ptrt = ptrh->next;
-    ptrh =  AllocNode();
-    SetNode(ptrh, no, name, ptrt);
+    ptrh->next = AllocNode();
+    SetNode(ptrh->next, no, name, ptrt);
 }
 
 void AppendNode(Node **top, int no, char *name) {
